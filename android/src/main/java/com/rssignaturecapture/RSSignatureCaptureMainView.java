@@ -146,7 +146,7 @@ public class RSSignatureCaptureMainView extends LinearLayout implements OnClickL
     }
 
     // set the file name of your choice
-    String fname = "signature.png";
+    String fname = "signature.jpeg";
 
     // in our case, we delete the previous file, you can remove this
     File file = new File(myDir, fname);
@@ -160,7 +160,7 @@ public class RSSignatureCaptureMainView extends LinearLayout implements OnClickL
       // save the signature
       if (saveFileInExtStorage) {
         FileOutputStream out = new FileOutputStream(file);
-        this.signatureView.getSignature().compress(Bitmap.CompressFormat.PNG, 90, out);
+        this.signatureView.getSignature().compress(Bitmap.CompressFormat.JPEG, 50, out);
         out.flush();
         out.close();
       }
